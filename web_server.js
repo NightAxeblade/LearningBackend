@@ -4,7 +4,7 @@ const fs = require('fs');
 var email;
 const server = http.createServer(function(req,res)
 {
-    const query = url.parse(req.url,true).query;
+    const query = url.parse(req.url).query;
     res.write("<html><head><title>BasicServer</title></head><body><p>Hello World!</p></body></html>");
     res.end();
     fs.appendFile('EmailId.text',JSON.stringify(query));
